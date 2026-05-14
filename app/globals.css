@@ -119,8 +119,22 @@ summary {
 
 .audit-link,
 .primary {
-  background: linear-gradient(135deg, var(--cyan), var(--blue) 58%, #8b5cff);
+  border-color: rgba(255, 255, 255, 0.28);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.02)),
+    #f4f7fb;
   color: #05070a;
+  box-shadow:
+    0 18px 54px rgba(0, 0, 0, 0.34),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+.audit-link:hover,
+.primary:hover {
+  border-color: rgba(37, 229, 255, 0.52);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.22), rgba(255, 255, 255, 0.04)),
+    #ffffff;
 }
 
 .ghost {
