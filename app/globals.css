@@ -370,63 +370,42 @@ summary {
   min-height: 520px;
   padding: 28px;
   border: 1px solid rgba(255, 62, 103, .42);
+  overflow: hidden;
   background:
-    radial-gradient(circle at 50% 46%, rgba(255,62,103,.22), transparent 30%),
+    radial-gradient(circle at 50% 42%, rgba(37,229,255,.16), transparent 30%),
+    radial-gradient(circle at 50% 62%, rgba(255,62,103,.18), transparent 28%),
     rgba(8, 10, 14, .82);
 }
 
-.pipe-labels {
-  display: flex;
-  justify-content: space-between;
-  color: var(--muted);
-  font-family: var(--font-mono);
-  font-size: .72rem;
+.rupture-map img {
+  object-fit: contain;
+  padding: 34px 34px 128px;
+  filter: saturate(1.08) contrast(1.05) drop-shadow(0 28px 70px rgba(37, 229, 255, .12));
 }
 
-.pipeline {
+.rupture-map::before {
   position: absolute;
-  top: 44%;
-  right: 44px;
-  left: 44px;
-  height: 96px;
-  border: 1px solid rgba(255,255,255,.14);
-  background: linear-gradient(90deg, rgba(37,229,255,.16), rgba(255,62,103,.22), rgba(255,255,255,.03));
-}
-
-.pipeline::before,
-.pipeline::after {
-  position: absolute;
-  top: -42px;
-  left: 50%;
-  width: 18px;
-  height: 180px;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
   content: "";
-  background: var(--red);
-  box-shadow: 0 0 34px rgba(255,62,103,.55);
+  background:
+    linear-gradient(rgba(37,229,255,.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(37,229,255,.055) 1px, transparent 1px),
+    linear-gradient(180deg, transparent 58%, rgba(4,5,7,.72) 100%);
+  background-size: 48px 48px, 48px 48px, auto;
 }
-
-.pipeline::before { transform: rotate(45deg); }
-.pipeline::after { transform: rotate(-45deg); }
-
-.pipeline i {
-  position: absolute;
-  bottom: -80px;
-  width: 10px;
-  background: var(--red);
-}
-
-.pipeline i:nth-child(1) { left: 42%; height: 42px; opacity: .45; }
-.pipeline i:nth-child(2) { left: 50%; height: 76px; opacity: .85; }
-.pipeline i:nth-child(3) { left: 57%; height: 56px; opacity: .35; }
 
 .leak-console {
   position: absolute;
   right: 28px;
   bottom: 28px;
   left: 28px;
+  z-index: 2;
   padding: 20px;
   border: 1px solid rgba(255,62,103,.35);
   background: rgba(255,62,103,.06);
+  backdrop-filter: blur(18px);
 }
 
 .leak-console small {
@@ -460,9 +439,19 @@ summary {
 .stat-stack article:nth-last-child(-n+2) { border-bottom: 0; }
 
 .stat-stack strong {
-  color: var(--red);
+  display: inline-flex;
+  align-items: baseline;
+  gap: 4px;
   font-size: clamp(3.7rem, 6vw, 6.6rem);
   line-height: .82;
+}
+
+.stat-number {
+  color: var(--ink);
+}
+
+.stat-symbol {
+  color: #ffd86b;
 }
 
 .stat-stack span {

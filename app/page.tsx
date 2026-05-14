@@ -14,10 +14,10 @@ import {
 const nav = ["Services", "Solutions", "Process", "Results", "FAQ"];
 
 const leakStats = [
-  ["62%", "of inbound calls go unanswered during local business hours"],
-  ["85%", "of callers routed to voicemail will immediately call a competitor"],
-  ["$24k", "average annual revenue lost from just 2 missed calls per day"],
-  ["400%", "drop in conversion probability if a lead isn't contacted within 5 minutes"],
+  { number: "62", symbol: "%", label: "of inbound calls go unanswered during local business hours" },
+  { number: "85", symbol: "%", label: "of callers routed to voicemail will immediately call a competitor" },
+  { number: "$24k", symbol: "", label: "average annual revenue lost from just 2 missed calls per day" },
+  { number: "400", symbol: "%", label: "drop in conversion probability if a lead isn't contacted within 5 minutes" },
 ];
 
 const systems = [
@@ -178,26 +178,25 @@ export default function Home() {
           </div>
           <div className="bleed-grid">
             <div className="rupture-map">
-              <div className="pipe-labels">
-                <span>AD SPEND</span>
-                <span>BOOKED</span>
-              </div>
-              <div className="pipeline">
-                <i />
-                <i />
-                <i />
-                <b />
-              </div>
+              <Image
+                src="/generated/broken-revenue-funnel.png"
+                alt="Cracked revenue funnel leaking lost signal"
+                fill
+                sizes="(max-width: 1120px) 100vw, 38vw"
+              />
               <div className="leak-console">
                 <small>LEAK DETECTED</small>
                 <strong>voicemail delay / slow follow-up / manual handoff</strong>
               </div>
             </div>
             <div className="stat-stack">
-              {leakStats.map(([value, label]) => (
-                <article key={value}>
-                  <strong>{value}</strong>
-                  <span>{label}</span>
+              {leakStats.map((stat) => (
+                <article key={`${stat.number}${stat.symbol}`}>
+                  <strong>
+                    <span className="stat-number">{stat.number}</span>
+                    {stat.symbol ? <span className="stat-symbol">{stat.symbol}</span> : null}
+                  </strong>
+                  <span>{stat.label}</span>
                 </article>
               ))}
             </div>
