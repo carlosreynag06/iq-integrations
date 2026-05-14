@@ -119,14 +119,15 @@ summary {
 
 .audit-link,
 .primary {
-  border-color: rgba(37, 229, 255, 0.38);
+  border-color: rgba(37, 229, 255, 0.62);
   background:
-    linear-gradient(180deg, rgba(37, 229, 255, 0.13), rgba(37, 229, 255, 0.02)),
-    rgba(5, 10, 15, 0.86);
-  color: var(--ink);
+    linear-gradient(180deg, rgba(37, 229, 255, 0.18), rgba(37, 229, 255, 0.035)),
+    rgba(3, 17, 23, 0.92);
+  color: var(--cyan);
   box-shadow:
     0 18px 54px rgba(0, 0, 0, 0.3),
-    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    0 0 34px rgba(37, 229, 255, 0.08),
+    inset 0 1px 0 rgba(37, 229, 255, 0.2);
   transition:
     background 180ms ease,
     border-color 180ms ease,
@@ -137,14 +138,14 @@ summary {
 
 .audit-link:hover,
 .primary:hover {
-  border-color: rgba(200, 255, 77, 0.78);
+  border-color: rgba(37, 229, 255, 0.95);
   background:
-    linear-gradient(180deg, rgba(200, 255, 77, 0.16), rgba(37, 229, 255, 0.035)),
-    rgba(8, 14, 18, 0.94);
-  color: var(--ink);
+    linear-gradient(180deg, rgba(37, 229, 255, 0.28), rgba(37, 229, 255, 0.08)),
+    rgba(4, 24, 32, 0.98);
+  color: #eaffff;
   box-shadow:
-    0 0 0 1px rgba(200, 255, 77, 0.18),
-    0 22px 64px rgba(37, 229, 255, 0.18);
+    0 0 0 1px rgba(37, 229, 255, 0.28),
+    0 22px 64px rgba(37, 229, 255, 0.22);
   transform: translateY(-2px);
 }
 
@@ -344,6 +345,10 @@ summary {
   font-size: clamp(3.2rem, 6.5vw, 7rem);
   line-height: .88;
   letter-spacing: 0;
+}
+
+.outcomes-heading h2 span {
+  color: #ffd86b;
 }
 
 .section-copy span,

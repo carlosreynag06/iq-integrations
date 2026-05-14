@@ -230,7 +230,10 @@ export default function Home() {
         <section className="outcomes" id="solutions">
           <div className="outcomes-heading">
             <p>Philosophy</p>
-            <h2>We Don&apos;t Sell Software. We Sell Outcomes.</h2>
+            <h2>
+              We Don&apos;t <span>Sell</span> Software. <span>We Sell</span>{" "}
+              Outcomes.
+            </h2>
           </div>
           <div className="outcomes-body">
             <p>
