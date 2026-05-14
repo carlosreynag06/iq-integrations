@@ -231,8 +231,8 @@ export default function Home() {
           <div className="outcomes-heading">
             <p>Philosophy</p>
             <h2>
-              We Don&apos;t <span>Sell</span> Software. <span>We Sell</span>{" "}
-              Outcomes.
+              We Don&apos;t <span className="accent-gold">Sell</span> Software.{" "}
+              <span className="accent-gold">We Sell</span> Outcomes.
             </h2>
           </div>
           <div className="outcomes-body">
