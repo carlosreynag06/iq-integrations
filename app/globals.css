@@ -379,7 +379,7 @@ summary {
 
 .rupture-map img {
   object-fit: contain;
-  padding: 34px 34px 128px;
+  padding: 10px 14px 108px;
   filter: saturate(1.08) contrast(1.05) drop-shadow(0 28px 70px rgba(37, 229, 255, .12));
 }
 
@@ -410,7 +410,7 @@ summary {
 
 .leak-console small {
   display: block;
-  color: var(--red);
+  color: #ffd86b;
   font-family: var(--font-mono);
   font-weight: 900;
 }
@@ -438,20 +438,25 @@ summary {
 .stat-stack article:nth-child(2n) { border-right: 0; }
 .stat-stack article:nth-last-child(-n+2) { border-bottom: 0; }
 
-.stat-stack strong {
+.stat-stack article > strong {
   display: inline-flex;
   align-items: baseline;
   gap: 4px;
+  color: #ffd86b;
   font-size: clamp(3.7rem, 6vw, 6.6rem);
   line-height: .82;
 }
 
 .stat-number {
-  color: var(--ink);
+  color: #ffd86b;
+  font-size: inherit;
+  line-height: inherit;
 }
 
 .stat-symbol {
   color: #ffd86b;
+  font-size: inherit;
+  line-height: inherit;
 }
 
 .stat-stack span {
