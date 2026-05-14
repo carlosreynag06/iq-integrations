@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 import { Metric } from "@/components/ui/Metric";
 import { RevenueCommandCore } from "@/components/visuals/RevenueCommandCore";
@@ -9,7 +10,10 @@ export function HeroSection() {
       <div className="hero-grid">
         <div className="hero-copy">
           <p className="eyebrow">High-Performance Automation</p>
-          <h1>Stop Losing Customers To Silence.</h1>
+          <h1>
+            Stop Losing Customers
+            <span>To Silence.</span>
+          </h1>
           <p className="hero-lede">
             We build AI systems that answer every call, capture every lead, and
             book every appointment.
@@ -23,6 +27,14 @@ export function HeroSection() {
         </div>
 
         <div className="hero-visual-wrap">
+          <Image
+            className="hero-command-image"
+            src="/generated/revenue-command-core.png"
+            alt="Abstract revenue recovery command center with data streams converging into an automation core"
+            width={1536}
+            height={1024}
+            priority
+          />
           <RevenueCommandCore />
         </div>
       </div>

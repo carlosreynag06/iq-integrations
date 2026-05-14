@@ -48,7 +48,7 @@ export function ChatPreview() {
           onClick={() => setOpen(true)}
         >
           <MessageSquareText aria-hidden="true" size={22} />
-          <span>IQ Assistant</span>
+          <span>Assistant</span>
         </button>
       )}
     </div>

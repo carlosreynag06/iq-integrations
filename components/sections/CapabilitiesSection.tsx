@@ -9,7 +9,7 @@ export function CapabilitiesSection() {
         <SectionHeader
           eyebrow="// CAPABILITIES"
           title="Systems That Pay For Themselves."
-          body="A capability matrix for the high-cost moments where slow response, manual work, and silence turn demand into lost revenue."
+          body="Automation for the moments where slow response, manual work, and silence turn demand into lost revenue."
         />
         <div className="capability-matrix">
           {capabilities.map((item) => {
