@@ -444,42 +444,9 @@ summary {
 }
 
 .systems-stage {
-  position: relative;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 14px;
-}
-
-.systems-stage::before {
-  position: absolute;
-  inset: 16% 12%;
-  z-index: -1;
-  content: "";
-  border: 1px solid rgba(37,229,255,.16);
-  transform: rotate(-8deg);
-}
-
-.systems-core {
-  display: grid;
-  min-height: 300px;
-  place-items: center;
-  border: 1px solid var(--line-hot);
-  background:
-    radial-gradient(circle, rgba(37,229,255,.18), transparent 58%),
-    rgba(8, 12, 16, .74);
-}
-
-.systems-core span {
-  color: var(--lime);
-  font-size: 4rem;
-  font-weight: 900;
-}
-
-.systems-core b {
-  color: var(--muted);
-  font-family: var(--font-mono);
-  font-size: .78rem;
-  text-transform: uppercase;
 }
 
 .system-node {

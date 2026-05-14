@@ -210,10 +210,6 @@ export default function Home() {
             <h2>Systems That Pay For Themselves.</h2>
           </div>
           <div className="systems-stage">
-            <div className="systems-core">
-              <span>IQ</span>
-              <b>Automation Core</b>
-            </div>
             {systems.map((item) => {
               const Icon = item.icon;
               return (
