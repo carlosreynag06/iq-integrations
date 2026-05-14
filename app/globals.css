@@ -447,19 +447,17 @@ summary {
   line-height: .82;
 }
 
-.stat-number {
+.stat-stack article > strong .stat-number,
+.stat-stack article > strong .stat-symbol {
+  display: inline;
+  max-width: none;
+  margin-top: 0;
   color: #ffd86b;
   font-size: inherit;
   line-height: inherit;
 }
 
-.stat-symbol {
-  color: #ffd86b;
-  font-size: inherit;
-  line-height: inherit;
-}
-
-.stat-stack span {
+.stat-label {
   display: block;
   max-width: 360px;
   margin-top: 30px;

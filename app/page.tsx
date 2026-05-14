@@ -196,7 +196,7 @@ export default function Home() {
                     <span className="stat-number">{stat.number}</span>
                     {stat.symbol ? <span className="stat-symbol">{stat.symbol}</span> : null}
                   </strong>
-                  <span>{stat.label}</span>
+                  <span className="stat-label">{stat.label}</span>
                 </article>
               ))}
             </div>
