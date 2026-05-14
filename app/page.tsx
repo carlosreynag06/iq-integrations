@@ -5,73 +5,59 @@ import {
   Bot,
   CalendarCheck,
   CheckCircle2,
-  FileText,
   MessageSquareText,
   PhoneCall,
   Route,
-  Sparkles,
   Star,
 } from "lucide-react";
 
-const navItems = ["Services", "Solutions", "Process", "Results", "FAQ"];
+const nav = ["Services", "Solutions", "Process", "Results", "FAQ"];
 
-const stats = [
-  {
-    value: "62%",
-    label: "of inbound calls go unanswered during local business hours",
-  },
-  {
-    value: "85%",
-    label: "of callers routed to voicemail will immediately call a competitor",
-  },
-  {
-    value: "$24k",
-    label: "average annual revenue lost from just 2 missed calls per day",
-  },
-  {
-    value: "400%",
-    label: "drop in conversion probability if a lead isn't contacted within 5 minutes",
-  },
+const leakStats = [
+  ["62%", "of inbound calls go unanswered during local business hours"],
+  ["85%", "of callers routed to voicemail will immediately call a competitor"],
+  ["$24k", "average annual revenue lost from just 2 missed calls per day"],
+  ["400%", "drop in conversion probability if a lead isn't contacted within 5 minutes"],
 ];
 
-const capabilities = [
+const systems = [
   {
-    number: "01",
+    n: "01",
     title: "Missed-Call Text-Back & Revenue Recovery",
     body: "Capture the caller before the moment goes cold, trigger a direct text path, and route the opportunity toward a booking.",
     metric: "Recover silent demand",
     icon: PhoneCall,
   },
   {
-    number: "02",
+    n: "02",
     title: "24/7 AI Voice Receptionist",
     body: "Answer after-hours demand, qualify the request, and keep appointment momentum moving when the front desk is offline.",
     metric: "Always-on intake",
     icon: Bot,
   },
   {
-    number: "03",
+    n: "03",
     title: "Speed-to-Lead Instant Follow-Up",
     body: "Route new inquiries immediately across the channels your prospects already use, before a competitor gets the conversation.",
     metric: "Sub-minute response",
     icon: Route,
   },
   {
-    number: "04",
+    n: "04",
     title: "AI Review & Reputation Management",
     body: "Identify satisfied customers, request reviews at the right time, and keep reputation signals moving upward.",
     metric: "Reputation lift",
     icon: Star,
   },
   {
-    number: "05",
+    n: "05",
     title: "No-Show Reduction & Schedule Optimization",
     body: "Use reminders, confirmations, and recovery sequences to protect calendar capacity and refill openings.",
     metric: "Protected calendar",
     icon: CalendarCheck,
   },
   {
-    number: "06",
+    n: "06",
     title: "AI Customer Support & FAQ Agent",
     body: "Triage repeat questions, route urgent needs, and keep staff focused on higher-value work.",
     metric: "Lower support drag",
@@ -80,185 +66,164 @@ const capabilities = [
 ];
 
 const pillars = [
-  {
-    title: "ROI-First Architecture",
-    body: "Every system starts with the leak: missed calls, slow follow-up, manual entry, dormant contacts, or reporting drag.",
-  },
-  {
-    title: "Zero-Friction, Done-For-You",
-    body: "Clients do not need to learn another platform. We build around the tools and operating habits already in place.",
-  },
-  {
-    title: "Built for Service Businesses",
-    body: "The work is designed for calls, bookings, reviews, intake, field teams, document flow, and local revenue pressure.",
-  },
+  ["ROI-First Architecture", "Every system starts with the leak: missed calls, slow follow-up, manual entry, dormant contacts, or reporting drag."],
+  ["Zero-Friction, Done-For-You", "Clients do not need to learn another platform. We build around the tools and operating habits already in place."],
+  ["Built for Service Businesses", "The work is designed for calls, bookings, reviews, intake, field teams, document flow, and local revenue pressure."],
 ];
 
-const process = [
-  {
-    title: "Diagnose Analysis",
-    body: "Map response gaps, intake friction, manual labor, and the exact places revenue or time is leaking.",
-  },
-  {
-    title: "Automate Deploy",
-    body: "Build the workflows, routing, prompts, integrations, and handoff logic that remove the bottleneck.",
-  },
-  {
-    title: "Optimize Scale",
-    body: "Tune performance, watch outcomes, and expand automation only where the business case is clear.",
-  },
+const steps = [
+  ["Diagnose Analysis", "Map response gaps, intake friction, manual labor, and the exact places revenue or time is leaking."],
+  ["Automate Deploy", "Build the workflows, routing, prompts, integrations, and handoff logic that remove the bottleneck."],
+  ["Optimize Scale", "Tune performance, watch outcomes, and expand automation only where the business case is clear."],
 ];
 
 const faqs = [
-  {
-    question: "Do we have to replace our current software?",
-    answer:
-      "No. IQ Integrations is built around your existing tools wherever possible. The goal is to remove friction, not force your team into another platform.",
-  },
-  {
-    question: "What kind of businesses is this built for?",
-    answer:
-      "Service businesses with inbound calls, booked appointments, repeat follow-up, reviews, documents, or operational reporting needs are the strongest fit.",
-  },
-  {
-    question: "Is the AI customer-facing?",
-    answer:
-      "It can be, but only where it improves the customer experience. Some systems run behind the scenes to route leads, clean data, trigger follow-up, or notify staff.",
-  },
-  {
-    question: "How do you decide what to automate first?",
-    answer:
-      "We start with the highest-cost bottleneck: missed calls, slow response, no-shows, manual document entry, dormant contacts, or fragmented reporting.",
-  },
-  {
-    question: "Will this pretend to be a human?",
-    answer:
-      "No. Systems should be clear, useful, and trustworthy. Automation should create faster service without damaging customer confidence.",
-  },
+  ["Do we have to replace our current software?", "No. IQ Integrations is built around your existing tools wherever possible. The goal is to remove friction, not force your team into another platform."],
+  ["What kind of businesses is this built for?", "Service businesses with inbound calls, booked appointments, repeat follow-up, reviews, documents, or operational reporting needs are the strongest fit."],
+  ["Is the AI customer-facing?", "It can be, but only where it improves the customer experience. Some systems run behind the scenes to route leads, clean data, trigger follow-up, or notify staff."],
+  ["How do you decide what to automate first?", "We start with the highest-cost bottleneck: missed calls, slow response, no-shows, manual document entry, dormant contacts, or fragmented reporting."],
+  ["Will this pretend to be a human?", "No. Systems should be clear, useful, and trustworthy. Automation should create faster service without damaging customer confidence."],
 ];
 
 export default function Home() {
   return (
-    <div className="site-shell">
-      <header className="topbar">
-        <Link href="/" className="brand" aria-label="IQ Integrations home">
+    <div className="page">
+      <header className="nav-shell">
+        <Link href="/" className="mark" aria-label="IQ Integrations home">
           <span>IQ</span>
-          <strong>Integrations</strong>
+          <b>Integrations</b>
         </Link>
-        <nav aria-label="Main navigation">
-          {navItems.map((item) => (
+        <nav aria-label="Primary navigation">
+          {nav.map((item) => (
             <Link href={`#${item.toLowerCase()}`} key={item}>
               {item}
             </Link>
           ))}
         </nav>
-        <Link className="nav-cta" href="#audit">
-          Book Your ROI Audit <ArrowUpRight size={18} />
+        <Link href="#audit" className="audit-link">
+          Book Your ROI Audit <ArrowUpRight size={17} />
         </Link>
       </header>
 
       <main>
         <section className="hero" id="top">
-          <div className="hero-copy">
-            <p className="section-code">High-Performance Automation</p>
+          <Image
+            className="hero-media"
+            src="/generated/revenue-command-core.png"
+            alt="Revenue recovery automation core with data streams"
+            fill
+            priority
+            sizes="100vw"
+          />
+          <div className="hero-shade" />
+
+          <div className="hero-content">
+            <div className="hero-kicker">
+              <span>High-Performance Automation</span>
+              <i />
+              <span>Revenue Recovery Systems</span>
+            </div>
             <h1>
               Stop Losing
-              <span>Customers To Silence.</span>
+              <span>Customers</span>
+              <em>To Silence.</em>
             </h1>
             <p>
               We build AI systems that answer every call, capture every lead,
               and book every appointment.
             </p>
             <div className="hero-actions">
-              <Link className="primary-action" href="#audit">
+              <Link href="#audit" className="primary">
                 Book Your ROI Audit <ArrowUpRight size={18} />
               </Link>
-              <Link className="secondary-action" href="#services">
-                View Recovery Systems
+              <Link href="#services" className="ghost">
+                Inspect Systems
               </Link>
             </div>
           </div>
 
-          <div className="hero-stage" aria-label="Revenue recovery command core visual">
-            <Image
-              src="/generated/revenue-command-core.png"
-              alt="Cinematic automation command core with data pipelines converging"
-              fill
-              priority
-              sizes="(max-width: 900px) 100vw, 54vw"
-            />
-            <div className="stage-overlay">
+          <aside className="command-dock" aria-label="Automation system status">
+            <div className="dock-head">
+              <span>IQ OPS / LIVE MODEL</span>
+              <b>Revenue Recovery Command</b>
+            </div>
+            <div className="dock-metrics">
               <div>
-                <span>240x</span>
-                <b>Faster Response</b>
+                <strong>240x</strong>
+                <span>Faster Response</span>
               </div>
               <div>
-                <span>340%</span>
-                <b>Avg 90-Day ROI</b>
+                <strong>340%</strong>
+                <span>Avg 90-Day ROI</span>
               </div>
             </div>
-            <div className="channel-stack">
-              <span>Calls</span>
-              <span>Forms</span>
-              <span>DMs</span>
-              <span>Calendar</span>
+            <div className="dock-flow">
+              <span>CALL</span>
+              <i />
+              <span>QUALIFY</span>
+              <i />
+              <span>BOOK</span>
             </div>
-          </div>
+          </aside>
         </section>
 
-        <section className="loss-section" id="results">
-          <div className="loss-intro">
-            <p className="section-code">{"// Problem Identification"}</p>
+        <section className="bleed-section" id="results">
+          <div className="section-copy">
+            <p>{"// Problem Identification"}</p>
             <h2>You are bleeding capital.</h2>
-            <p>
+            <span>
               Every minute an inquiry sits in voicemail, your ad spend is
               vaporized. Here is the math.
-            </p>
+            </span>
           </div>
-          <div className="loss-board">
-            <div className="loss-visual">
-              <span className="loss-label">Leak detected</span>
-              <div className="loss-pipe">
-                <i />
-                <i />
-                <i />
+          <div className="bleed-grid">
+            <div className="rupture-map">
+              <div className="pipe-labels">
+                <span>AD SPEND</span>
+                <span>BOOKED</span>
               </div>
-              <strong>voicemail delay / slow follow-up / manual handoff</strong>
+              <div className="pipeline">
+                <i />
+                <i />
+                <i />
+                <b />
+              </div>
+              <div className="leak-console">
+                <small>LEAK DETECTED</small>
+                <strong>voicemail delay / slow follow-up / manual handoff</strong>
+              </div>
             </div>
-            <div className="loss-stats">
-              {stats.map((stat) => (
-                <article key={stat.value}>
-                  <b>{stat.value}</b>
-                  <p>{stat.label}</p>
+            <div className="stat-stack">
+              {leakStats.map(([value, label]) => (
+                <article key={value}>
+                  <strong>{value}</strong>
+                  <span>{label}</span>
                 </article>
               ))}
             </div>
           </div>
         </section>
 
-        <section className="systems-section" id="services">
-          <div className="section-title-row">
-            <div>
-              <p className="section-code">{"// CAPABILITIES"}</p>
-              <h2>Systems That Pay For Themselves.</h2>
-            </div>
-            <p>
-              A disciplined automation board for the moments where silence,
-              delay, and manual work quietly tax the business.
-            </p>
+        <section className="systems" id="services">
+          <div className="systems-lead">
+            <p>{"// CAPABILITIES"}</p>
+            <h2>Systems That Pay For Themselves.</h2>
           </div>
-
-          <div className="systems-board">
-            {capabilities.map((item) => {
+          <div className="systems-stage">
+            <div className="systems-core">
+              <span>IQ</span>
+              <b>Automation Core</b>
+            </div>
+            {systems.map((item) => {
               const Icon = item.icon;
               return (
-                <article className="system-row" key={item.number}>
-                  <span className="row-number">{item.number}</span>
-                  <Icon className="row-icon" size={24} />
+                <article className="system-node" key={item.n}>
                   <div>
-                    <h3>{item.title}</h3>
-                    <p>{item.body}</p>
+                    <span>{item.n}</span>
+                    <Icon size={22} />
                   </div>
+                  <h3>{item.title}</h3>
+                  <p>{item.body}</p>
                   <b>{item.metric}</b>
                 </article>
               );
@@ -266,58 +231,58 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="philosophy-panel" id="solutions">
-          <div className="philosophy-copy">
-            <p className="section-code">Philosophy</p>
+        <section className="outcomes" id="solutions">
+          <div className="outcomes-heading">
+            <p>Philosophy</p>
             <h2>We Don&apos;t Sell Software. We Sell Outcomes.</h2>
+          </div>
+          <div className="outcomes-body">
             <p>
               The work is not another subscription. It is a structural repair
               to the parts of the operation that leak demand, time, and
               attention.
             </p>
-          </div>
-          <div className="philosophy-proof">
-            {pillars.map((pillar, index) => (
-              <article key={pillar.title}>
-                <span>{String(index + 1).padStart(2, "0")}</span>
-                <h3>{pillar.title}</h3>
-                <p>{pillar.body}</p>
-              </article>
-            ))}
+            <div>
+              {pillars.map(([title, body], index) => (
+                <article key={title}>
+                  <span>{String(index + 1).padStart(2, "0")}</span>
+                  <h3>{title}</h3>
+                  <p>{body}</p>
+                </article>
+              ))}
+            </div>
           </div>
         </section>
 
-        <section className="process-section" id="process">
-          <div className="section-title-row">
-            <div>
-              <p className="section-code">{"// THE METHODOLOGY"}</p>
-              <h2>Revenue Mechanics</h2>
-            </div>
-            <p>
+        <section className="method" id="process">
+          <div className="section-copy">
+            <p>{"// THE METHODOLOGY"}</p>
+            <h2>Revenue Mechanics</h2>
+            <span>
               Diagnose the leak, deploy the system, and scale only what proves
               its value in the operation.
-            </p>
+            </span>
           </div>
-          <div className="process-track">
-            {process.map((step, index) => (
-              <article key={step.title}>
+          <div className="method-track">
+            {steps.map(([title, body], index) => (
+              <article key={title}>
                 <span>{String(index + 1).padStart(2, "0")}</span>
-                <h3>{step.title}</h3>
-                <p>{step.body}</p>
+                <h3>{title}</h3>
+                <p>{body}</p>
               </article>
             ))}
           </div>
-          <Link className="primary-action process-action" href="#audit">
+          <Link href="#audit" className="primary">
             Start Now <ArrowUpRight size={18} />
           </Link>
         </section>
 
-        <section className="validation-section">
+        <section className="proof">
           <div>
-            <p className="section-code">{"// VALIDATION"}</p>
+            <p>{"// VALIDATION"}</p>
             <h2>Operational Wins, Logged.</h2>
           </div>
-          <div className="log-list">
+          <div className="proof-log">
             {[
               "Missed inquiries converted into immediate follow-up paths.",
               "Lead response compressed from manual delay to automated routing.",
@@ -325,60 +290,55 @@ export default function Home() {
               "Revenue recovery logic tied to measurable operating bottlenecks.",
             ].map((item) => (
               <p key={item}>
-                <CheckCircle2 size={18} /> {item}
+                <CheckCircle2 size={18} />
+                {item}
               </p>
             ))}
           </div>
         </section>
 
-        <section className="faq-section" id="faq">
-          <div className="section-title-row">
-            <div>
-              <p className="section-code">{"// KNOWLEDGE BASE"}</p>
-              <h2>System Queries</h2>
-            </div>
-            <FileText size={42} />
+        <section className="queries" id="faq">
+          <div className="section-copy">
+            <p>{"// KNOWLEDGE BASE"}</p>
+            <h2>System Queries</h2>
           </div>
-          <div className="faq-grid">
-            {faqs.map((faq, index) => (
-              <details key={faq.question} open={index === 0}>
-                <summary>{faq.question}</summary>
-                <p>{faq.answer}</p>
+          <div className="query-list">
+            {faqs.map(([question, answer], index) => (
+              <details key={question} open={index === 0}>
+                <summary>{question}</summary>
+                <p>{answer}</p>
               </details>
             ))}
           </div>
         </section>
 
-        <section className="closing-section" id="audit">
+        <section className="final" id="audit">
           <div>
-            <p className="section-code">SYSTEM: AUDIT READY</p>
+            <p>SYSTEM: AUDIT READY</p>
             <h2>End The Madness.</h2>
-            <p>
+            <span>
               Book a structural audit of your communication systems. Find out
               exactly where you are losing capital.
-            </p>
+            </span>
             <Link
-              className="primary-action"
               href="mailto:hello@iqintegrations.com?subject=ROI%20Audit%20Request"
+              className="primary"
             >
               Initialize Audit <ArrowUpRight size={18} />
             </Link>
-          </div>
-          <div className="closing-orbit" aria-hidden="true">
-            <Sparkles size={30} />
           </div>
         </section>
       </main>
 
       <footer className="footer">
         <div>
-          <Link href="/" className="brand">
+          <Link href="/" className="mark">
             <span>IQ</span>
-            <strong>Integrations</strong>
+            <b>Integrations</b>
           </Link>
           <p>We sell outcomes, not software.</p>
         </div>
-        <nav aria-label="Footer navigation">
+        <nav aria-label="Footer">
           <Link href="#services">Services</Link>
           <Link href="#solutions">About</Link>
           <Link href="#process">Process</Link>
