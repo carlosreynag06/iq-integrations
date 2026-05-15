@@ -207,9 +207,6 @@ export default function Home() {
           <div className="systems-lead">
             <p>{"// CAPABILITIES"}</p>
             <h2>Systems That Pay For Themselves.</h2>
-            <Link href="#audit" className="systems-cta">
-              Build My Recovery System <ArrowUpRight size={18} />
-            </Link>
           </div>
           <div className="systems-stage">
             {systems.map((item) => {
@@ -226,6 +223,15 @@ export default function Home() {
                 </article>
               );
             })}
+          </div>
+          <div className="systems-command">
+            <div>
+              <span>READY TO DEPLOY</span>
+              <strong>Build the recovery system around your highest-cost bottleneck.</strong>
+            </div>
+            <Link href="#audit" className="systems-cta">
+              Build My Recovery System <ArrowUpRight size={18} />
+            </Link>
           </div>
         </section>
 
