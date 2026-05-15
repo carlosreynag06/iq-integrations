@@ -107,6 +107,20 @@ export default function Home() {
 
       <main>
         <section className="hero" id="top">
+          <Image
+            className="hero-media"
+            src="/generated/revenue-command-core.png"
+            alt="Revenue recovery automation core with data streams"
+            fill
+            priority
+            sizes="100vw"
+          />
+          <div className="hero-shade" />
+          <div className="hero-atmosphere" aria-hidden="true">
+            <span />
+            <span />
+            <span />
+          </div>
           <div className="hero-content">
             <div className="hero-kicker">
               <span>High-Performance Automation</span>
@@ -128,21 +142,6 @@ export default function Home() {
               <Link href="#services" className="ghost">
                 Inspect Systems
               </Link>
-            </div>
-          </div>
-
-          <div className="hero-visual" aria-label="Revenue recovery automation visual">
-            <Image
-              className="hero-media"
-              src="/generated/revenue-command-core.png"
-              alt="Revenue recovery automation core with data streams"
-              fill
-              priority
-              sizes="(max-width: 1120px) 100vw, 48vw"
-            />
-            <div className="visual-frame">
-              <span>IQ OPS / LIVE MODEL</span>
-              <b>Revenue Recovery Command</b>
             </div>
           </div>
 
