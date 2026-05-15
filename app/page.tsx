@@ -107,16 +107,6 @@ export default function Home() {
 
       <main>
         <section className="hero" id="top">
-          <Image
-            className="hero-media"
-            src="/generated/revenue-command-core.png"
-            alt="Revenue recovery automation core with data streams"
-            fill
-            priority
-            sizes="100vw"
-          />
-          <div className="hero-shade" />
-
           <div className="hero-content">
             <div className="hero-kicker">
               <span>High-Performance Automation</span>
@@ -124,9 +114,8 @@ export default function Home() {
               <span>Revenue Recovery Systems</span>
             </div>
             <h1>
-              Stop Losing
-              <span>Customers</span>
-              <em>To Silence.</em>
+              Stop Losing Customers
+              <span>To Silence.</span>
             </h1>
             <p>
               We build AI systems that answer every call, capture every lead,
@@ -142,28 +131,31 @@ export default function Home() {
             </div>
           </div>
 
-          <aside className="command-dock" aria-label="Automation system status">
-            <div className="dock-head">
+          <div className="hero-visual" aria-label="Revenue recovery automation visual">
+            <Image
+              className="hero-media"
+              src="/generated/revenue-command-core.png"
+              alt="Revenue recovery automation core with data streams"
+              fill
+              priority
+              sizes="(max-width: 1120px) 100vw, 48vw"
+            />
+            <div className="visual-frame">
               <span>IQ OPS / LIVE MODEL</span>
               <b>Revenue Recovery Command</b>
             </div>
-            <div className="dock-metrics">
-              <div>
-                <strong>240x</strong>
-                <span>Faster Response</span>
-              </div>
-              <div>
-                <strong>340%</strong>
-                <span>Avg 90-Day ROI</span>
-              </div>
+          </div>
+
+          <aside className="hero-rail" aria-label="Automation system status">
+            <div>
+              <span>240x</span>
+              <b>Faster Response</b>
             </div>
-            <div className="dock-flow">
-              <span>CALL</span>
-              <i />
-              <span>QUALIFY</span>
-              <i />
-              <span>BOOK</span>
+            <div>
+              <span>340%</span>
+              <b>Avg 90-Day ROI</b>
             </div>
+            <p>CALL <i /> QUALIFY <i /> BOOK</p>
           </aside>
         </section>
 
